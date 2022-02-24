@@ -1,0 +1,61 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id = "disp"> winnner is: </div>
+        <button id = "con">Congress</button>
+        <button id = "mln">mln</button>
+        <button id = "bjp">bjp</button>
+        <button id = "res">Show results</button>
+        
+
+        <script>
+            let bjp = 0;
+            let con = 0;
+            let mln = 0;
+          
+          document.getElementById("con").getEventListner('click', ()=>{
+              con++;
+
+          });
+          document.getElementById("bjp").addEventListner('click', ()=>{
+              bjp++;
+
+        });
+        document.getElementById("con").addEventListner('click', ()=>{
+            mln++;
+
+        });
+        let res = (a, b, c)=>{
+
+            if(a>b && b>c){
+                return a;
+                
+                
+            }
+            else if(a > b && c > b){
+
+                if(a>c){
+                    return a;
+                }
+                else{
+                    return c;
+                }
+            }
+            else{
+                return c;
+            }
+
+
+        }
+
+        document.getElementById("res").addEventListner('click', ()=>{
+            document.getElementById("disp").innerHTML = "Winner is" + res(bjp, mln, con);
+
+        });
+
+
+
+        </script>
+    </body>
+    </html>
